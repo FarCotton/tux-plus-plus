@@ -1,6 +1,7 @@
 #include <dpp/dpp.h>
 #include <fstream>
 #include <string>
+#include "cogs/ping/ping.hpp"
  
 std::string get_token_from_env() {
     std::ifstream file("../.env");
@@ -12,7 +13,7 @@ std::string get_token_from_env() {
         }
     }
     file.close();
-    throw std::runtime_error("No token found in .env");
+    throw std::runtime_error("No token found in .env, exiting...");
 }
 const std::string BOT_TOKEN = get_token_from_env();
  
@@ -21,15 +22,16 @@ int main() {
  
     bot.on_log(dpp::utility::cout_logger());
  
-    bot.on_slashcommand([](const dpp::slashcommand_t& event) {
-        if (event.command.get_command_name() == "ping") {
-            event.reply("Pong!");
+    bot.on_ready([&bot](const dpp::ready_t& event) {
+        std::cout << "Ready!" << std::endl;
+        if (dpp::run_once<struct register_bot_commands>()) {
+          bot.global_command_create(dpp::slashcommand("ping", "Ping Pong!", bot.me.id));
         }
     });
- 
-    bot.on_ready([&bot](const dpp::ready_t& event) {
-        if (dpp::run_once<struct register_bot_commands>()) {
-            bot.global_command_create(dpp::slashcommand("ping", "Ping pong!", bot.me.id));
+
+    bot.on_slashcommand([&bot](const dpp::slashcommand_t& event) {
+        if (event.command.get_command_name() == "ping") {
+            ping(bot, event);
         }
     });
  
