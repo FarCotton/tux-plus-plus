@@ -23,6 +23,12 @@ std::string get_token_from_env() {
 }
 const std::string BOT_TOKEN = get_token_from_env();
 
+void logCallback(const dpp::confirmation_callback_t callback) {
+  if (callback.is_error()) {
+    std::cerr << "Error: " << callback.get_error().human_readable << std::endl;
+  }
+}
+
 int main() {
   dpp::cluster bot(BOT_TOKEN);
 
@@ -62,10 +68,12 @@ int main() {
   }
 
   // ... (register commands)
-  for (const auto &command : commands) {
-    bot.global_command_create(dpp::slashcommand(
-        command->get_name(), "Command description", bot.me.id));
-  }
+  bot.on_ready([&bot, &commands](const dpp::ready_t &event) {
+    for (const auto &command : commands) {
+      bot.guild_command_create(dpp::slashcommand(
+        command->get_name(), command->get_description(), bot.me.id), 1280574980345565184); // Testing guild
+    }
+  });
 
   // ... (register events)
   bot.on_slashcommand([&bot, &commands](const dpp::slashcommand_t &event) {
