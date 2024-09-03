@@ -161,17 +161,17 @@ See [LICENSE](LICENSE.md) for details.
 	<tbody>
 		<tr>
             <td align="center">
-                <a href="https://github.com/0x4248">
-                    <img src="https://avatars.githubusercontent.com/u/60709927?v=4" width="100;" alt="0x4248"/>
+                <a href="https://github.com/StanTheAwesomeMan">
+                    <img src="https://avatars.githubusercontent.com/u/80547533?v=4" width="100;" alt="StanTheAwesomeMan"/>
                     <br />
-                    <sub><b>0x4248</b></sub>
+                    <sub><b>StanTheAwesomeMan</b></sub>
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/wlinator">
-                    <img src="https://avatars.githubusercontent.com/u/75494059?v=4" width="100;" alt="wlinator"/>
+                <a href="https://github.com/FarCotton">
+                    <img src="https://avatars.githubusercontent.com/u/168192606?v=4" width="100;" alt="FarCotton"/>
                     <br />
-                    <sub><b>wlinator</b></sub>
+                    <sub><b>FarCotton</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -203,12 +203,21 @@ See [LICENSE](LICENSE.md) for details.
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/wlinator">
+                    <img src="https://avatars.githubusercontent.com/u/75494059?v=4" width="100;" alt="wlinator"/>
+                    <br />
+                    <sub><b>wlinator</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Atmois">
                     <img src="https://avatars.githubusercontent.com/u/130537361?v=4" width="100;" alt="Atmois"/>
                     <br />
                     <sub><b>Atmois</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/ExploitDemon">
                     <img src="https://avatars.githubusercontent.com/u/75138914?v=4" width="100;" alt="ExploitDemon"/>
@@ -216,8 +225,6 @@ See [LICENSE](LICENSE.md) for details.
                     <sub><b>ExploitDemon</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/jwe66">
                     <img src="https://avatars.githubusercontent.com/u/142009905?v=4" width="100;" alt="jwe66"/>
@@ -226,10 +233,10 @@ See [LICENSE](LICENSE.md) for details.
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/targzballs">
-                    <img src="https://avatars.githubusercontent.com/u/102343489?v=4" width="100;" alt="targzballs"/>
+                <a href="https://github.com/audiovisualsystems">
+                    <img src="https://avatars.githubusercontent.com/u/102343489?v=4" width="100;" alt="audiovisualsystems"/>
                     <br />
-                    <sub><b>targzballs</b></sub>
+                    <sub><b>audiovisualsystems</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -240,13 +247,6 @@ See [LICENSE](LICENSE.md) for details.
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/HikariNeee">
-                    <img src="https://avatars.githubusercontent.com/u/162735312?v=4" width="100;" alt="HikariNeee"/>
-                    <br />
-                    <sub><b>HikariNeee</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/AuraPy">
                     <img src="https://avatars.githubusercontent.com/u/119633142?v=4" width="100;" alt="AuraPy"/>
                     <br />
@@ -254,10 +254,17 @@ See [LICENSE](LICENSE.md) for details.
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/clonidine">
-                    <img src="https://avatars.githubusercontent.com/u/86500701?v=4" width="100;" alt="clonidine"/>
+                <a href="https://github.com/0x4248">
+                    <img src="https://avatars.githubusercontent.com/u/60709927?v=4" width="100;" alt="0x4248"/>
                     <br />
-                    <sub><b>clonidine</b></sub>
+                    <sub><b>0x4248</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/HikariNeee">
+                    <img src="https://avatars.githubusercontent.com/u/162735312?v=4" width="100;" alt="HikariNeee"/>
+                    <br />
+                    <sub><b>HikariNeee</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -267,6 +274,15 @@ See [LICENSE](LICENSE.md) for details.
                     <sub><b>exhq</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/clonidine">
+                    <img src="https://avatars.githubusercontent.com/u/86500701?v=4" width="100;" alt="clonidine"/>
+                    <br />
+                    <sub><b>clonidine</b></sub>
+                </a>
+            </td>
             <td align="center">
                 <a href="https://github.com/CapnRyna">
                     <img src="https://avatars.githubusercontent.com/u/100812735?v=4" width="100;" alt="CapnRyna"/>
@@ -274,8 +290,6 @@ See [LICENSE](LICENSE.md) for details.
                     <sub><b>CapnRyna</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/exvh">
                     <img src="https://avatars.githubusercontent.com/u/87952523?v=4" width="100;" alt="exvh"/>
@@ -318,6 +332,8 @@ See [LICENSE](LICENSE.md) for details.
                     <sub><b>soupyfx</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Bikoil">
                     <img src="https://avatars.githubusercontent.com/u/139659047?v=4" width="100;" alt="Bikoil"/>
@@ -332,8 +348,6 @@ See [LICENSE](LICENSE.md) for details.
                     <sub><b>thecaprisun</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/teilorr">
                     <img src="https://avatars.githubusercontent.com/u/100589370?v=4" width="100;" alt="teilorr"/>
