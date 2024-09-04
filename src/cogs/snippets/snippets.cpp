@@ -13,7 +13,9 @@ public:
     std::size_t pos = messageContent.find(" ");
 
     if (pos != std::string::npos) {
-      std::string snippetIdentifier = messageContent.substr(0, pos);
+      std::string snippetIdentifier = messageContent.substr(pos, messageContent.length() - pos);
+      snippetIdentifier.erase(0, snippetIdentifier.find_first_not_of(" "));
+      std::replace(snippetIdentifier.begin(), snippetIdentifier.end(), ' ', '_');
       std::string snippet = get_snippet(bot, snippetIdentifier);
       event.send(snippet);
     }
@@ -31,7 +33,14 @@ public:
 
 protected:
   std::string get_snippet(dpp::cluster &bot, std::string snippetIdentifier) {
-    return "test";
+    std::ifstream file("../snippets/" + snippetIdentifier + ".txt");
+
+    if (!file.is_open()) {
+      return "Error: Snippet not found";
+    }
+
+    std::string content = "`/snippets/" + snippetIdentifier + ".txt` || " + std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+    return content;
   }
 };
 

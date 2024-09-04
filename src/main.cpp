@@ -68,6 +68,11 @@ int main() {
     }
   }
 
+  // Sort commands by prefix length in descending order (because of the way the prefix detection works)
+  std::sort(commands.begin(), commands.end(), [](const auto &a, const auto &b) {
+    return a->get_prefix().size() > b->get_prefix().size();
+  });
+
   // ... (register commands)
   bot.on_ready([&bot, &commands](const dpp::ready_t &event) {
     bot.global_bulk_command_delete();
@@ -85,15 +90,15 @@ int main() {
   });
 
   // ... (register message_create)
-  bot.on_message_create([&bot, &commands](const dpp::message_create_t &event) {
-    for (const auto &command : commands) {
-      std::string commandPrefix = command->get_prefix();
-      if (commandPrefix.size() > 0 && event.msg.content.substr(0, commandPrefix.size()).compare(commandPrefix) == 0) {
-        command->execute(bot, event);
-        break;
-      }
+bot.on_message_create([&bot, &commands](const dpp::message_create_t &event) {
+  for (const auto &command : commands) {
+    std::string commandPrefix = command->get_prefix();
+    if (commandPrefix.size() > 0 && event.msg.content.substr(0, commandPrefix.size()).compare(commandPrefix) == 0) {
+      command->execute(bot, event);
+      break;
     }
-  });
+  }
+});
 
   // ... (register events)
   bot.on_slashcommand([&bot, &commands](const dpp::slashcommand_t &event) {
