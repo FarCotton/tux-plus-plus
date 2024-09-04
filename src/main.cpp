@@ -13,7 +13,7 @@ std::string get_token_from_env() {
   std::ifstream file("../.env");
   std::string line;
   while (std::getline(file, line)) {
-    size_t pos = line.find("TOKEN=");
+    std::size_t pos = line.find("TOKEN=");
     if (pos != std::string::npos) {
       return line.substr(pos + 6);
     }
@@ -69,9 +69,27 @@ int main() {
 
   // ... (register commands)
   bot.on_ready([&bot, &commands](const dpp::ready_t &event) {
+    bot.global_bulk_command_delete();
+    bot.guild_bulk_command_delete(1280574980345565184);
+    std::vector<dpp::slashcommand> scommands;
     for (const auto &command : commands) {
-      bot.guild_command_create(dpp::slashcommand(
-        command->get_name(), command->get_description(), bot.me.id), 1280574980345565184); // Testing guild
+      dpp::slashcommand scommand = dpp::slashcommand(
+        command->get_name(), command->get_description(), bot.me.id);
+      for (const auto &option : command->get_options()) {
+        scommand.add_option(option);
+      }
+      scommands.push_back(scommand);
+    }
+    bot.guild_bulk_command_create(scommands, 1280574980345565184); // Testing guild
+  });
+
+  // ... (register message_create)
+  bot.on_message_create([&bot, &commands](const dpp::message_create_t &event) {
+    for (const auto &command : commands) {
+      if (event.msg.content.find(command->get_prefix()) == 0) {
+        command->execute(bot, event);
+        break;
+      }
     }
   });
 
