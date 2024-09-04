@@ -30,7 +30,8 @@ void logCallback(const dpp::confirmation_callback_t callback) {
 }
 
 int main() {
-  dpp::cluster bot(BOT_TOKEN);
+  // Token
+  dpp::cluster bot(BOT_TOKEN, dpp::intents::i_all_intents);
 
   // Log all events to stdout
   bot.on_log(dpp::utility::cout_logger());
@@ -86,7 +87,8 @@ int main() {
   // ... (register message_create)
   bot.on_message_create([&bot, &commands](const dpp::message_create_t &event) {
     for (const auto &command : commands) {
-      if (event.msg.content.find(command->get_prefix()) == 0) {
+      std::string commandPrefix = command->get_prefix();
+      if (commandPrefix.size() > 0 && event.msg.content.substr(0, commandPrefix.size()).compare(commandPrefix) == 0) {
         command->execute(bot, event);
         break;
       }
